@@ -1,8 +1,10 @@
+const {response, request} = require ("express");
 const express = require("express");
 const mongoose = require("mongoose");
+const app = express();
 const bodyParser = require("body-parser");
 
-const app = express();
+
 mongoose.connect(
   "mongodb+srv://admin2:admin@clustergrupo33.l0xzt5u.mongodb.net/bd_g33?retryWrites=true&w=majority"
 );
@@ -18,7 +20,6 @@ const usuarioSchema = new mongoose.Schema({
 
 const UsuarioModelo = new mongoose.model("usuarios", usuarioSchema);
 
-//const usuario =
 
 app.post("/AgregarUsuario", (request, response) => {
   // response.setHeader("Content-Type", "text/plain");
